@@ -1,6 +1,8 @@
 # 2-players-board-game
 This is an object oriented javaScript game where two players take turns to play. There are four weapons with varying levels of damage and a player can choose to attack or defend.
 
+Website : https://chepkuruipurity.github.io/2-players-board-game/
+
 # Step 1: Generate the map
 Start by randomly generating the game map. Each box can be either:
 
