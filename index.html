@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> Turn based Board game</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <header id="main-header">
+        <h1>Welcome to the jungle!!</h1>
+        <p>To survive you must be armed with the best weapons...</p>
+    </header>
+    <div class="options">
+        <button id="newGameBtn">START</button>
+        <button id="rules">RULES</button>
+    </div>
+
+    <div class="flexboard">
+        <div id="player1">
+            <div class=" headImage">
+                <h2> PLAYER 1:</h2>
+                <img class="image" src='images/player1.png' alt='Player one'>
+
+            </div>
+            <div class="health">
+                <p>Health points: <span class="player1Health">100</span>
+                    <p>
+            </div>
+
+            <div class='weaponImage'>
+                <h3>Weapon:</h3>
+                <img id='player1Weapon' src='images/dog.jpg' alt='Player Weapon'>
+
+                <p id="player1WeaponDamage"></p>
+            </div>
+            <div id="player1Buttons">
+                <button class='attack box'>Attack</button>
+                <button class='defend box'>Defend</button>
+            </div>
+            <div id='player1Status'></div>
+        </div>
+
+        <div class="grid"></div>
+        <div id="player2">
+            <div class=" headImage">
+                <h2> PLAYER 2:</h2>
+                <img class="image" src='images/player2.png' alt='Player two'>
+
+            </div>
+            <div class="health">
+                <p>Health Points: <span class="player2Health">100</span></p>
+            </div>
+            <div class="weaponImage">
+                <h3>Weapon:</h3>
+                <img id='player2Weapon' src='images/dog.jpg' alt='Player Weapon'>
+                <p id="player2WeaponDamage"></p>
+            </div>
+            <div id="player2Buttons">
+                <button class='attack box'>Attack</button>
+                <button class='defend box'>Defend</button>
+            </div>
+            <div id='player2Status'></div>
+        </div>
+    </div>
+    <!--rules-->
+
+    <div class="modal" id="rulesModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content" id="ruleMo">
+
+
+                <h3>Rules</h3>
+                <ul>
+                    <li>For each turn, a player can move from one to three boxes (horizontally or vertically) before ending their turn. </li>
+                    <li>If a player passes over a box containing a weapon, they leave their current weapon on site and replace it with the new one.</li>
+
+                    <li>If players cross over adjacent squares (horizontally or vertically), a battle begins.</li>
+
+                    <li>During combat
+                        <p>-Each player attacks in turn</p>
+                        <p>-The damage depends on the player's weapon</p>
+                        <p>-The player can choose to attack or defend against the next shot</p>
+                        <p>-If the player chooses to defend themselves, they sustain 50% less damage than normal</p>
+                        <p>-As soon as the life points of a player (initially 100) falls to 0, they lose. A message appears and the game is over.</p>
+                    </li>
+                </ul>
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="modal" id="gameModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Jungle Game! Game Over!</h4>
+
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div>
+                        <div id="winner"></div>
+                        <div id="loser"></div>
+                    </div>
+                    <div class="replay">Would you like to play again ?</div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" id="yes" data-dismiss="modal">New Game</button>
+                    <button type="button" id="no" data-dismiss="modal">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/jquery.js"></script>
+    <script src="js/load.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/weapon.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/game.js"></script>
+
+</body>
+
+</html>
