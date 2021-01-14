@@ -1,0 +1,406 @@
+body {
+    background-image: url('images/g.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.grid {
+    height: 540px;
+    width: 540px;
+    display: flex;
+    flex-wrap: wrap;
+    display: border-box;
+    margin-right: 0px;
+    margin: auto;
+    margin-bottom: 30px;
+    padding: auto;
+    background-color: gainsboro;
+}
+
+.grid div {
+    min-height: 52px;
+    min-width: 52px;
+    border-style: solid;
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid gainsboro;
+}
+
+#main-header {
+    margin: 1rem 0rem;
+    color: orange;
+    font-size: 24px;
+    text-align: center;
+}
+
+.options {
+    height: 540px;
+    width: 540px;
+    border-radius: 30%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    background-size: cover;
+    background-image: url(./images/bark.jpg);
+}
+
+#newGameBtn,
+#rules {
+    display: block;
+    width: 30%;
+    height: 10%;
+    padding: 1em;
+    margin: auto;
+    margin-top: 50%;
+    border: none;
+    border-radius: 2em;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #27819a;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    text-align: center;
+    justify-items: center;
+}
+
+#newGameBtn:hover {
+    background-color: #4095c6;
+}
+
+.flexboard,
+#newGameBtn,
+#rules {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#player1,
+#player2 {
+    width: 22.5%;
+    height: 50%;
+    background: #f7f7f7;
+    color: black;
+    font-size: 1.4em;
+    justify-content: center;
+    display: block;
+}
+
+h3 {
+    color: orange;
+    padding-right: 30px;
+    text-align: center;
+}
+
+img {
+    width: 90px;
+    height: 80px;
+}
+
+.playerImage,
+.health,
+.weaponImage,
+#player1Buttons,
+#player2Buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 15px;
+    margin-left: 30px;
+    padding-left: 5px;
+    align-items: center;
+}
+
+.image {
+    width: 80px;
+    height: 80px;
+}
+
+.headImage {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.player1Health,
+.player2Health {
+    border-radius: 40%;
+    margin-left: 10px;
+    padding: 20px;
+    background-color: darkcyan;
+    color: black;
+}
+
+button {
+    color: whitesmoke;
+    font-size: 1.2em;
+    border: 1px solid black;
+    width: 120px;
+    margin: 3px;
+}
+
+#player1Buttons,
+#player2Buttons {
+    display: none;
+}
+
+#player1Status,
+#playerStatus {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #fdffb4;
+}
+
+.attack,
+.defend {
+    border-radius: 20px;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-left: 40px;
+}
+
+.attack {
+    background: #235c07;
+}
+
+.defend {
+    background: #a5043a;
+}
+
+.obstacle {
+    background-color: black;
+}
+
+.empty {
+    background-color: #a5043a;
+}
+
+.sav {
+    background: url(./images/sav.jpg);
+}
+
+.player1 {
+    background-image: url(./images/player1.png) !important;
+    background-color: orange !important;
+}
+
+.player2 {
+    background-image: url(./images/player2.png) !important;
+    background-color: #4ca51f !important;
+}
+
+.lion {
+    background: url(./images/lion.jpg);
+}
+
+.elephant {
+    background: url(./images/elephant.jpg);
+}
+
+.giraffe {
+    background: url(./images/giraffe.jpg);
+}
+
+.dog {
+    background: url(./images/dog.jpg);
+}
+
+.monkey {
+    background: url(./images/monkey.jpg);
+}
+
+.highlight {
+    border: 1px solid black;
+    opacity: 0.6;
+}
+
+.player1,
+.player2,
+.lion,
+.elephant,
+.giraffe,
+.dog,
+.sav,
+.monkey,
+.obstacle {
+    background-size: 51px 51px;
+    background-repeat: no-repeat;
+}
+
+
+/* Modal Content/Box */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    outline: 0;
+    margin: auto;
+    align-items: center;
+}
+
+.modal-dialog {
+    position: relative;
+    width: auto;
+    margin: 5rem;
+    pointer-events: none;
+}
+
+.modal-content {
+    height: calc(100vh - 6rem);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background: url(./images/fire.jpg);
+    color: white;
+    margin-bottom: 5rem;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0.3rem;
+    outline: 0;
+}
+
+.modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+    border-bottom: 1px solid #dee2e6;
+    border-top-left-radius: calc(0.3rem - 1px);
+    border-top-right-radius: calc(0.3rem - 1px);
+}
+
+.modal-header .close {
+    padding: 1rem 1rem;
+    margin: -1rem -1rem -1rem auto;
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.75rem 1.25rem;
+    color: inherit;
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: 0.5;
+}
+
+button.close {
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+}
+
+.modal-title {
+    margin-bottom: 0;
+    line-height: 1.5;
+    font-size: 30px;
+    margin-left: 20rem;
+    font-weight: 700;
+    color: darkorange;
+}
+
+.modal-body {
+    position: relative;
+    flex: 1 1 auto;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.modal-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0.75rem;
+    border-top: 1px solid #dee2e6;
+    border-bottom-right-radius: calc(0.3rem - 1px);
+    border-bottom-left-radius: calc(0.3rem - 1px);
+}
+
+.modal-header,
+.modal-footer {
+    flex-shrink: 0;
+}
+
+#yes,
+#no {
+    margin: 20px;
+    align-self: center;
+    color: white;
+    background-color: #a5043a;
+    border: 0;
+    width: 15%;
+    height: 50px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 10px 25px;
+    font-size: 22px;
+}
+
+#winner {
+    font-weight: 500;
+    font-size: 33px;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+    margin-left: 10rem;
+}
+
+#loser {
+    font-weight: 400;
+    font-size: 30px;
+    margin-left: 10rem;
+    margin-bottom: 4rem;
+    text-transform: capitalize;
+}
+
+.replay {
+    margin-top: 3rem;
+    margin-left: 20rem;
+    font-size: 30px;
+    color: darkgreen;
+    align-content: center;
+    font-weight: 600;
+}
+
+#rulesModal {
+    font-size: 22px;
+    margin-left: 2rem;
+    height: 700px;
+    position: absolute;
+}
+
+#ruleMo h3 {
+    color: green;
+}
+
+#ruleMo li {
+    padding: 2px;
+}
+
+#ruleMo {
+    color: #1bdac8;
+    font-weight: 300;
+    background: black;
+    height: 700px;
+}
+
+.rulesBox ul {
+    list-style-position: inside;
+    margin-top: 10px;
+}
